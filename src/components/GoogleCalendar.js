@@ -1,11 +1,12 @@
 import React from 'react';
-import API_KEY from './../env.js';
-import CLIENT_ID from './../env.js';
+import KEYS from './Keys';
+
 
 function GoogleCalendar() {
 
   const gapi = window.gapi;
-
+  const CLIENT_ID = KEYS.CLIENT_ID;
+  const API_KEY = KEYS.REACT_APP_API_KEY;
 
   // Array of API discovery doc URLs for APIs used by the quickstart
   const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
@@ -114,19 +115,14 @@ function GoogleCalendar() {
       <p>Google Calendar API Quickstart</p>
 
     <p>Add buttons to initiate auth sequence and sign out</p>
-    <button id="authorize_button" style="display: none;">Authorize</button>
-    <button id="signout_button" style="display: none;">Sign Out</button>
+    <button id="authorize_button" style={{display: 'black'}}>Authorize</button>
+    <button id="signout_button" style={{display: 'black'}}>Sign Out</button>
 
-    <pre id="content" style="white-space: pre-wrap;"></pre>
+    <pre id="content" style={{whiteSpace: 'preWrap'}}></pre>
 
     <script type="text/javascript">
     </script>
 
-
-    <script async defer src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
 
     </div>
   )
